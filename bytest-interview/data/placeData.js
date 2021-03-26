@@ -35,6 +35,14 @@ export async function initializePlaces() {
 async function loadPlacesWithImages() {
   // TODO: Load the place list data from https://byteboard.dev/api/data/places
   // and combine with images from https://byteboard.dev/api/data/img/{placeId}
+
+    //Fetch through this URL
+    const placeList = fetch('https://byteboard.dev/api/data/places')
+    //Then after getting the respone, convert into JSON to make it readable
+    .then(res => res.json())
+    // Then console it. You can change it to whatever you want to do with data after you got it in JSON form. 
+    .then(res => console.log(res))
+
   return [{
     id: 'example-a',
     name: 'TODO',
